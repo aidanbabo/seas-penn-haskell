@@ -1,5 +1,7 @@
 module Golf where
 
+-- The goal here is to be short, hence all the where clauses
+
 -- Hopscotch
 skips :: [a] -> [[a]]
 skips s = forEach [1..(length s)]
@@ -18,3 +20,6 @@ localMaxima a = map second $ filter maxima $ zip3 a (drop 1 a) (drop 2 a)
 
 -- Histogram
 -- histogram :: [Integer] -> String
+
+occurences :: Integer -> [Integer] -> Int
+occurences i xs = length $ filter (\x -> x == i ) xs
